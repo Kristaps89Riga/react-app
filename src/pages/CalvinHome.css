@@ -1,0 +1,452 @@
+/* ================= Global ================= */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================= Logo ================= */
+.logo img {
+  width: 110px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ff6600, 0 0 30px #ff6600, 0 0 45px #ff6600;
+}
+
+/* ================= Main Container ================= */
+.calvin-container, .dark {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f6f8; /* soft light background */
+  color: #1a1a1a; /* slightly softened black text */
+  font-family: inherit; /* or set the same font as Light Mode, e.g., Arial, sans-serif */
+  line-height: 1.6;     /* ensure consistent line height */
+}
+
+/* ================= Header / Navbar / Dark Mode ================= */
+.s-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 15vh;
+  background-color: rgba(0, 0, 0, 0.75); /* consistent dark overlay */
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.s-header__content {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.s-header__nav-list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.s-header__nav-list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.s-header__nav-list a:hover,
+.s-header__nav-list a.active {
+  color: #ff6b00; /* modern orange accent */
+}
+
+/* ================= Dark Mode (Matrix + Modern Mix) ================= */
+.dark {
+  background-color: #0d1117;  /* deep gray instead of pure black */
+  color: #e6edf3;             /* soft white */
+}
+
+/* Links in dark mode */
+.dark a {
+  color: #00ff88; /* neon green accent */
+  text-decoration: none;
+}
+
+/* Buttons in dark mode */
+.dark button {
+  background-color: #0d1117;
+  color: #00ff88;
+  border: 1px solid #00ff88;
+  padding: 5px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.dark button:hover {
+  background-color: #00ff88;
+  color: #0d1117;
+  box-shadow: 0 0 10px #00ff88;
+}
+
+/* About & Contact in dark mode */
+.dark .s-about h2,
+.dark .s-about p,
+.dark .s-contact h2,
+.dark .s-contact p {
+  color: #00ff88;
+}
+
+/* Posts Section dark mode */
+.dark .s-post,
+.dark .add-post-form {
+  background-color: #0d1117;
+  color: #e6edf3;
+  border: 1px solid #00ff88;
+  box-shadow: 0 3px 15px #00ff88; /* neon green shadow */
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.dark .s-post:hover {
+  box-shadow: 0 8px 25px #00ff88; /* stronger neon shadow on hover */
+  transform: translateY(-3px);
+}
+
+/* Post buttons */
+.dark .delete-btn {
+  background-color: #0d1117;
+  color: #00ff88;
+  border: 1px solid #00ff88;
+}
+
+.dark .delete-btn:hover {
+  background-color: #00ff88;
+  color: #0d1117;
+  box-shadow: 0 0 8px #00ff88;
+}
+
+/* Input fields and textareas */
+.dark .add-post-form input,
+.dark .add-post-form textarea {
+  background-color: #0d1117;
+  color: #e6edf3;
+  border: 1px solid #00ff88;
+}
+
+/* Hero text */
+.dark .s-hero__slide-content h2,
+.dark .s-hero__slide-content p {
+  color: #00ff88;
+}
+
+/* ================= Hero Section ================= */
+.s-hero {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background: 
+    linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.8)),
+    url("/images/hero1.jpg") center/cover no-repeat;
+}
+
+.s-hero__slide-content h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.s-hero__slide-content p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+/* ================= Add Blog Button ================= */
+.centered {
+  text-align: center;
+  margin: 50px 0 30px;
+}
+
+.add-post-btn {
+  background: #0d6efd; /* Bootstrap blue tone */
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.add-post-btn:hover {
+  background: #0056b3; /* darker hover blue */
+  transform: translateY(-2px);
+}
+
+/* ================= Blog Form ================= */
+.add-post-form {
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.add-post-form input,
+.add-post-form textarea {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ================= Image Preview ================= */
+.image-preview img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* ================= Posts Section ================= */
+.s-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+  padding: 40px;
+}
+
+.s-post {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  margin-bottom: 35px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1); /* light mode default */
+}
+
+.s-post:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* stronger shadow on hover for light mode */
+}
+
+.s-post__thumb {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.s-post__content {
+  padding: 25px;
+}
+
+.s-post__title {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.s-post__content button {
+  margin-right: 10px;
+  padding: 5px 12px;
+  border: 1px solid #ff6b00;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.s-post__content button:hover {
+  background: #ff6b00;
+  color: white;
+}
+
+/* ================= Fullscreen Image Modal ================= */
+.image-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  cursor: zoom-out;
+}
+
+.image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+/* ================= About & Contact Sections ================= */
+.s-about,
+.s-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 20px;
+  margin: 0 auto 20px;
+  max-width: 800px;
+}
+
+.s-about h2,
+.s-contact h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #0d6efd; /* accent blue */
+}
+
+.s-about p,
+.s-contact p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #070707;
+}
+
+/* ================= Footer ================= */
+.s-footer {
+  width: 100%;
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+  margin-top: auto;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+
+  /* HEADER / NAV */
+  .s-header {
+    height: auto;
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .s-header__content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .s-header__nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .s-header__nav-list a {
+    font-size: 1rem;
+  }
+
+  .logo img {
+    width: 90px; /* smaller on mobile */
+  }
+
+  /* HERO SECTION */
+  .s-hero {
+    height: auto;
+    padding: 60px 20px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .s-hero__slide-content h2 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .s-hero__slide-content p {
+    font-size: 1rem;
+  }
+
+  /* ADD BLOG BUTTON */
+  .centered {
+    margin: 30px 0;
+  }
+
+  .add-post-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  /* POSTS SECTION */
+  .s-content {
+    padding: 20px 10px;
+  }
+
+  .s-post {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .s-post__thumb {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+
+  .s-post__content {
+    padding: 15px;
+  }
+
+  .s-post__title {
+    font-size: 1.3rem;
+  }
+
+  /* ABOUT & CONTACT */
+  .s-about, .s-contact {
+    padding: 30px 15px;
+  }
+
+  .s-about h2, .s-contact h2 {
+    font-size: 1.6rem;
+  }
+
+  .s-about p, .s-contact p {
+    font-size: 1rem;
+  }
+
+  /* FOOTER */
+  .s-footer {
+    padding: 20px 10px;
+    font-size: 0.9rem;
+  }
+}

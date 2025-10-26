@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyBlog homepage</title>
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/blog-icon.svg" />
+
+    <!-- ✅ Preload sql.js WebAssembly for faster database load -->
+    <link
+      rel="preload"
+      href="/sql-wasm.wasm"
+      as="fetch"
+      type="application/wasm"
+      crossorigin="anonymous"
+    />
+
+    <!-- ✅ Optional: add a small loading style while app starts -->
+    <style>
+      body {
+        margin: 0;
+        background-color: #0a0a0a;
+        color: #00ff41;
+        font-family: monospace;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0.5;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ✅ React mounts here -->
+    <div id="root"></div>
+
+    <!-- ✅ Main entry -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
